@@ -6,13 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.io.File;
-import java.time.Duration;
-import java.util.HashMap;
-import java.util.concurrent.TimeUnit;
-
-public class Prime_DashBoard_PageObjects extends Globals {
-    public Prime_DashBoard_PageObjects(WebDriver driver)
+public class UBA_DashBoard_PageObjects extends Globals {
+    public UBA_DashBoard_PageObjects(WebDriver driver)
     {
         PageFactory.initElements(driver, this);
     }

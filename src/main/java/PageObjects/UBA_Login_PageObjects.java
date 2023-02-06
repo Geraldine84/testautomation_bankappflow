@@ -5,14 +5,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import java.io.File;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-public class Prime_Login_PageObjects extends Globals {
+public class UBA_Login_PageObjects extends Globals {
 
-    public Prime_Login_PageObjects(WebDriver driver) {
+    public UBA_Login_PageObjects(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
@@ -29,7 +30,7 @@ public class Prime_Login_PageObjects extends Globals {
     public WebElement inp_LoginPassword;
     @FindBy(xpath = "//button/span[contains(text(),'Login')]")
     public WebElement btn_Login;
-    @FindBy(xpath = "//div[@class='ng-star-inserted'][text()='Dashboard']")
+    @FindBy(xpath = "//div[@class='header-block']/div[text()='Dashboard']")
     public WebElement hdr_Dashboard;
     @FindBy(xpath = "//span/b")
     public WebElement txt_LoginName;
@@ -65,7 +66,7 @@ public class Prime_Login_PageObjects extends Globals {
         // If no environment parameter provided then take default as QA
         if ((Environment == null) || (Environment.equals("EnvValueNotPassed"))) {
 
-            testData = ReadExcelFile("." + File.separator + "TestData", "PrimeLite_Login.xlsx", "Prime_Login", 1);
+            testData = ReadExcelFile("." + File.separator + "TestData", "UBA_Portal_Login.xlsx", "UBA_Login", 1);
             application_login(testData.get("Login_URL"), testData.get("Login_User_ID"), testData.get("Login_Password"));
         } else {
 
@@ -73,28 +74,28 @@ public class Prime_Login_PageObjects extends Globals {
             switch (Environment) {
                 case "QA": {
 
-                    testData = ReadExcelFile("." + File.separator + "TestData", "PrimeLite_Login.xlsx", "Prime_Login", 1);
+                    testData = ReadExcelFile("." + File.separator + "TestData", "UBA_Portal_Login.xlsx", "UBA_Login", 1);
                     application_login(testData.get("Login_URL"), testData.get("Login_User_ID"), testData.get("Login_Password"));
 
                     break;
                 }
                 case "DEV": {
 
-                    testData = ReadExcelFile("." + File.separator + "TestData", "PrimeLite_Login.xlsx", "Prime_Login", 2);
+                    testData = ReadExcelFile("." + File.separator + "TestData", "UBA_Portal_Login.xlsx", "UBA_Login", 2);
                     application_login(testData.get("Login_URL"), testData.get("Login_User_ID"), testData.get("Login_Password"));
 
                     break;
                 }
                 case "STAGING": {
 
-                    testData = ReadExcelFile("." + File.separator + "TestData", "PrimeLite_Login.xlsx", "Prime_Login", 4);
+                    testData = ReadExcelFile("." + File.separator + "TestData", "UBA_Portal_Login.xlsx", "UBA_Login", 4);
                     application_login(testData.get("Login_URL"), testData.get("Login_User_ID"), testData.get("Login_Password"));
 
                     break;
                 }
                 case "PRODUCTION": {
 
-                    testData = ReadExcelFile("." + File.separator + "TestData", "PrimeLite_Login.xlsx", "Prime_Login", 3);
+                    testData = ReadExcelFile("." + File.separator + "TestData", "UBA_Portal_Login.xlsx", "UBA_Login", 3);
                     application_login(testData.get("Login_URL"), testData.get("Login_User_ID"), testData.get("Login_Password"));
 
                     break;

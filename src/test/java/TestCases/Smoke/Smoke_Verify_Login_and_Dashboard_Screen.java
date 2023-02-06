@@ -1,8 +1,8 @@
 package TestCases.Smoke;
 
 
-import PageObjects.Prime_DashBoard_PageObjects;
-import PageObjects.Prime_Login_PageObjects;
+import PageObjects.UBA_DashBoard_PageObjects;
+import PageObjects.UBA_Login_PageObjects;
 import Utils.Globals;
 import org.testng.annotations.Test;
 
@@ -13,7 +13,7 @@ public class Smoke_Verify_Login_and_Dashboard_Screen extends Globals {
     //Verify smoke steps for Login screen
     @Test(priority = 1)
     public void smokeTest_Verify_LoginScreen() throws Exception {
-        Prime_Login_PageObjects login = new Prime_Login_PageObjects(driver);
+        UBA_Login_PageObjects login = new UBA_Login_PageObjects(driver);
 
         // Login with valid credentials
         String env = login.login_Env();
@@ -36,8 +36,8 @@ public class Smoke_Verify_Login_and_Dashboard_Screen extends Globals {
 
     @Test(priority = 2)
     public void smokeTest_Verify_DashBoardScreen() throws Exception {
-        Prime_Login_PageObjects login = new Prime_Login_PageObjects(driver);
-        Prime_DashBoard_PageObjects dashBoard = new Prime_DashBoard_PageObjects(driver);
+        UBA_Login_PageObjects login = new UBA_Login_PageObjects(driver);
+        UBA_DashBoard_PageObjects dashBoard = new UBA_DashBoard_PageObjects(driver);
 
         // Login with valid credentials
         String env = login.login_Env();
