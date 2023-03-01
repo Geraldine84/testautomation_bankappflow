@@ -11,9 +11,9 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-public class UBA_Login_PageObjects extends Globals {
+public class UBA_LoginScreen_PageObjects extends Globals {
 
-    public UBA_Login_PageObjects(WebDriver driver) {
+    public UBA_LoginScreen_PageObjects(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
@@ -32,8 +32,15 @@ public class UBA_Login_PageObjects extends Globals {
     public WebElement btn_Login;
     @FindBy(xpath = "//div[@class='header-block']/div[text()='Dashboard']")
     public WebElement hdr_Dashboard;
-    @FindBy(xpath = "//span/b")
+    @FindBy(xpath = "//div[@class='usr-nme-cntr-dv-nme']")
     public WebElement txt_LoginName;
+
+    @FindBy(xpath = "//div[@class='sdnv-usr-nme-cntr-dv']/div/div[2]")
+    public WebElement txt_LoginRole;
+
+    @FindBy(xpath = "//div[@class='sd-nv-dprtmnt-nm-cntr-dv ng-star-inserted']")
+    public WebElement txt_LoginDepartment;
+
     @FindBy(xpath = "//span[contains(text(),'Register >')]")
     public WebElement lnk_register;
     @FindBy(xpath = "//span[contains(text(),'Forgot Password?')]")
@@ -41,7 +48,7 @@ public class UBA_Login_PageObjects extends Globals {
     @FindBy(xpath = "//*[@class='tpLogo']")
     public WebElement img_TerraLogo;
     //logout
-    @FindBy(xpath = "//span[text()='Logout']")
+    @FindBy(xpath = "//div[text()='Logout']")
     public WebElement btn_LogOut;
 
     //Welcome screen locators

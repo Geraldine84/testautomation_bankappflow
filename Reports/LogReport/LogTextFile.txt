@@ -4,35 +4,41 @@ chrome Browser Launched successfully!
 --------------------- smokeTest_Verify_LoginScreen  --> Test Execution Started ----------------
 Jenkins Environment : null
 Waiting for 2 seconds...
- ****************    Total time took to load the Login Page : 5 Seconds   *******************
-Waiting for [[ChromeDriver: chrome on MAC (5ec290181ef85adbf5a569d9210f5476)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
+ ****************    Total time took to load the Login Page : 11 Seconds   *******************
+Waiting for [[ChromeDriver: chrome on MAC (09e1a051028934567fcdbbd01ac414ec)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
 Element found.
-Waiting for [[ChromeDriver: chrome on MAC (5ec290181ef85adbf5a569d9210f5476)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (09e1a051028934567fcdbbd01ac414ec)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
 Element found.
 Waiting for 1 seconds...
 Waiting for 2 seconds...
 No Welcome Window was present
-Waiting for Proxy element for: DefaultElementLocator 'By.xpath: //div[@class='ng-star-inserted'][text()='Dashboard']' for up to PT20S seconds.
-*** Unable to find element
-Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@class='ng-star-inserted'][text()='Dashboard']' (tried for 20 second(s) with 500 milliseconds interval)
-***
+Waiting for [[ChromeDriver: chrome on MAC (09e1a051028934567fcdbbd01ac414ec)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
+Element found.
+======  User  Santhosh QA Logged in successfully    ======
+Waiting for 2 seconds...
+Successfully!! Logged out From application
+Waiting for 2 seconds...
+Welcome Back 'isDisplayed' properly. Passed.
+Waiting for 2 seconds...
 ---------------------  smokeTest_Verify_LoginScreen  --> Test Execution Completed  ----------------
 
 --------------------- smokeTest_Verify_DashBoardScreen  --> Test Execution Started ----------------
 Jenkins Environment : null
 Waiting for 2 seconds...
  ****************    Total time took to load the Login Page : 3 Seconds   *******************
-Waiting for [[ChromeDriver: chrome on MAC (5ec290181ef85adbf5a569d9210f5476)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (09e1a051028934567fcdbbd01ac414ec)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
 Element found.
-Waiting for [[ChromeDriver: chrome on MAC (5ec290181ef85adbf5a569d9210f5476)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (09e1a051028934567fcdbbd01ac414ec)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
 Element found.
 Waiting for 1 seconds...
 Waiting for 2 seconds...
 No Welcome Window was present
-Waiting for Proxy element for: DefaultElementLocator 'By.xpath: //div[@class='ng-star-inserted'][text()='Dashboard']' for up to PT20S seconds.
-*** Unable to find element
-Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@class='ng-star-inserted'][text()='Dashboard']' (tried for 20 second(s) with 500 milliseconds interval)
-***
+Waiting for [[ChromeDriver: chrome on MAC (09e1a051028934567fcdbbd01ac414ec)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
+Element found.
+======  User  Santhosh QA Logged in successfully    ======
+Waiting for 2 seconds...
+DashBoard 'isDisplayed' properly. Passed.
+Waiting for 2 seconds...
 ---------------------  smokeTest_Verify_DashBoardScreen  --> Test Execution Completed  ----------------
 
 Browser closed successfully!
