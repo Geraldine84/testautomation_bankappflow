@@ -15,6 +15,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.Browser;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -28,6 +31,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.awt.*;
 import java.io.*;
 import java.lang.reflect.Method;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.time.Duration;
@@ -49,7 +53,7 @@ public class Globals {
     public static boolean result;
     //declare user directory path
     public static String directoryPath = System.getProperty("user.dir");
-    public static String nameOfScreenShot;
+
     static File destTxtLog = new File(directoryPath + File.separator + "Reports" + File.separator + "LogReport" + File.separator + "LogTextFile.txt");
     static File ScreenShotFilePath = new File(directoryPath + File.separator + "Reports/ScreenShots/");
 
@@ -130,9 +134,7 @@ public class Globals {
     public static String getCurrentDateTime() {
         LocalDateTime dateTime = LocalDateTime.now();
         // log("Current Time Stamp Default Format: "+dateTime);
-        String timeStamp = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH:mm:ss").format(dateTime);
-        //log("Current Time Stamp: " + timeStamp);
-        return timeStamp;
+        return DateTimeFormatter.ofPattern("yyyy-MM-dd_HH:mm:ss").format(dateTime);
     }
 
     //global method to initialise the browser
@@ -149,13 +151,14 @@ public class Globals {
         FileInputStream fis = new FileInputStream(directoryPath + File.separator + "config.properties");
 
         prop.load(fis);
-        String browserName = prop.getProperty("BrowserName");
+        String browserName = System.getProperty("Browser","chrome");//prop.getProperty("BrowserName");
         log("Selected Browser is -- " + browserName);
 
         if (browserName.equalsIgnoreCase("chrome")) {
-            //call Chrome browser
+
+            //call Chrome browser for local machine
             WebDriverManager.chromedriver().setup();
-            HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+            HashMap<String, Object> chromePrefs = new HashMap<>();
             ChromeOptions options = new ChromeOptions();
             //disable cookies
             chromePrefs.put("profile.default_content_settings.cookies", 2);
@@ -169,7 +172,7 @@ public class Globals {
             options.addArguments("disable-infobars");
             options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
 
-            options.addArguments("--headless","--window-size=1920,1200");
+           // options.addArguments("--headless","--window-size=1920,1200");
             driver = new ChromeDriver(options);
 
         } else if (browserName.equalsIgnoreCase("Firefox")) {
@@ -178,7 +181,7 @@ public class Globals {
             driver = new FirefoxDriver();
 
         } else if (browserName.equalsIgnoreCase("IE")) {
-            //call Internet explorer
+            //call Internet Explorer
             WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
 
@@ -207,7 +210,7 @@ public class Globals {
             log("Browser closed successfully!");
         } catch (Exception e) {
             log("*** Error closing browser.");
-            log("*** Error msg: " + e.toString());
+            log("*** Error msg: " + e);
         }
 
     }
@@ -323,9 +326,9 @@ public class Globals {
     }
     //method to scroll to the element view
     public static void scrollToElement(WebElement element) throws Exception {
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("arguments[0].scrollIntoView();", element);
-		log("Scroll to element view" + element);
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].scrollIntoView();", element);
+        log("Scroll to element view" + element);
     }
 
     //method to click on the element wait for the element to be clickable
@@ -349,14 +352,12 @@ public class Globals {
         wait(2);
 
     }
-   //Verify the element text with expected text value
+    //Verify the element text with expected text value
     public boolean verifyElement(WebElement elem, String elementText, String elementType)
-            throws HeadlessException, IOException, AWTException {
-        boolean flag = false;
+            throws HeadlessException {
         Wait(elem, Duration.ofSeconds(10));
         String elementDisplayed = elem.getText();
         if (elementDisplayed.contains(elementText)) {
-            flag = true;
             log(elementType + " '" + elementText + "' displayed properly. Passed.");
             assertTrue(true);
             result = true;
@@ -366,10 +367,10 @@ public class Globals {
             log("Actual value: \"" + elementDisplayed + "\"");
             StackTraceElement ste = new Exception().getStackTrace()[1];
             log(ste.getClassName() + "/" + ste.getMethodName() + ":" + ste.getLineNumber());
-            assertTrue(false);
+            fail();
             result = false;
         }
-        return flag;
+        return true;
     }
 
 }
