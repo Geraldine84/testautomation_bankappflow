@@ -14,7 +14,7 @@ public class UBA_ReportsScreen_PageObjects extends Globals {
         PageFactory.initElements(driver, this);
     }
 
-    // Define page objects of DashBoard screen
+    // Define page objects of Report screen
     @FindBy(xpath = "//div[@class='header-block']/div[text()='Reports']")
     public WebElement hdr_Reports;
 
@@ -24,8 +24,14 @@ public class UBA_ReportsScreen_PageObjects extends Globals {
     @FindBy(xpath = "//div[contains(text(),'Download log')]")
     public WebElement btn_DownloadLogs;
 
-    @FindBy(xpath = "//*[@class='ng-tns-c106-8 ant-select-selector']")
+    @FindBy(xpath = "//*[@class='ant-select-selection-item ng-star-inserted']")
     public WebElement drp_SelectSummaryType;
+
+    @FindBy(xpath = "//div[contains(text(),'Daily')]")
+    public WebElement drp_SelectSummaryTypeDaily;
+
+    @FindBy(xpath = "//div[contains(text(),'Monthly')]")
+    public WebElement drp_SelectSummaryTypeMonthly;
 
     @FindBy(xpath = "//div[@class='table-header-div']/div")
     public List<WebElement> lbl_tableHeaders;

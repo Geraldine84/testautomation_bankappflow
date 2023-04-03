@@ -14,7 +14,7 @@ public class UBA_SettingsScreen_PageObjects extends Globals {
         PageFactory.initElements(driver, this);
     }
 
-    // Define page objects of DashBoard screen
+    // Define page objects of Settings screen
     @FindBy(xpath = "//div[@class='header-block']/div[text()='Settings']")
     public WebElement hdr_Settings;
 

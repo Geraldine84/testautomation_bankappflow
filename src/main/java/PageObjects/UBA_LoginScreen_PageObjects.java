@@ -120,6 +120,7 @@ public class UBA_LoginScreen_PageObjects extends Globals {
             wait(2);
             btn_LogOut.click();
             log("Successfully!! Logged out From application");
+            reportLog("Successfully!! Logged out From application");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -143,6 +144,7 @@ public class UBA_LoginScreen_PageObjects extends Globals {
         long timetakeninsec = TimeUnit.MILLISECONDS.toSeconds(totalTime);
 
         log((" ****************    Total time took to load the Login Page : " + timetakeninsec + " Seconds   *******************"));
+        reportLog((" ****************    Total time took to load the Login Page : " + timetakeninsec + " Seconds   *******************"));
 
         Wait(lbl_loginEmail, Duration.ofSeconds(20));
         inp_loginEmail.sendKeys(login_user_id);
@@ -169,6 +171,7 @@ public class UBA_LoginScreen_PageObjects extends Globals {
         //wait for home/dashboard page to load
         Wait(hdr_Dashboard, Duration.ofSeconds(20));
         log("======  User  " + txt_LoginName.getText() + " Logged in successfully    ======");
+        reportLog("======  User  " + txt_LoginName.getText() + " Logged in successfully    ======");
 
     }
 
