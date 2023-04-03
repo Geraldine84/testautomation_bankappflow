@@ -14,7 +14,7 @@ public class UBA_CampaignScreen_PageObjects extends Globals {
         PageFactory.initElements(driver, this);
     }
 
-    // Define page objects of DashBoard screen
+    // Define page objects of CAMPAIGN screen
     @FindBy(xpath = "//div[@class='header-block']/div[text()='Campaigns']")
     public WebElement hdr_Campaigns;
 
@@ -30,13 +30,25 @@ public class UBA_CampaignScreen_PageObjects extends Globals {
     @FindBy(xpath = "//div[@class='ant-dropdown-menu-submenu-title']")
     public WebElement drp_status;
 
+    @FindBy(xpath = "//li[contains(text(),'Rejected')]")
+    public WebElement drp_status_Rejected;
+
+    @FindBy(xpath = "//li[contains(text(),'Running')]")
+    public WebElement drp_status_Running;
+
+    @FindBy(xpath = "//li[contains(text(),'Creation in progress')]")
+    public WebElement drp_status_CreationInProgress;
+
+    @FindBy(xpath = "//li[contains(text(),'Completed')]")
+    public WebElement drp_status_Completed;
+
     @FindBy(xpath = "//div[@class='table-header-div']/div")
     public List<WebElement> lbl_tableHeaders;
 
     @FindBy(xpath = "//div[@class='table-content-div ng-star-inserted']/div")
     public List<WebElement> lbl_tableRowValues;
 
-    @FindBy(xpath = "//div[@class='ant-dropdown-menu-submenu-title']")
+    @FindBy(xpath = "//div[contains(text(),'Go back to Campaigns')]")
     public WebElement lnk_BacktoCamp;
 
     @FindBy(xpath = "//div[@class='queue-container-main']/div[1]")
@@ -47,6 +59,9 @@ public class UBA_CampaignScreen_PageObjects extends Globals {
 
     @FindBy(xpath = "//div[@class='queue-container-main']/div[3]")
     public WebElement hdr_CampMessage;
+
+    @FindBy(xpath = "//div[contains(text(),'Enter campaign details')]")
+    public WebElement hdr_CreateCamp;
 
     @FindBy(xpath = "//div[@class='queue-container-main']/div[4]")
     public WebElement lbl_CampMessage;

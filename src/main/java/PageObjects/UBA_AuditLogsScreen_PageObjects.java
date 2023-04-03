@@ -1,6 +1,7 @@
 package PageObjects;
 
 import Utils.Globals;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,21 +15,25 @@ public class UBA_AuditLogsScreen_PageObjects extends Globals {
         PageFactory.initElements(driver, this);
     }
 
-    // Define page objects of DashBoard screen
+    // Define page objects of Audit Logs screen
     @FindBy(xpath = "//div[@class='header-block']/div[text()='Audit Logs']")
     public WebElement hdr_AuditLogs;
 
-    @FindBy(xpath = "//input[@class='ant-select-selection-search-input ng-untouched ng-pristine ng-valid']")
-    public List<WebElement> drp_Action_Department;
+    @FindBy(xpath = "//nz-select[@nzplaceholder='Action']")
+    public WebElement drp_Action_Department;
 
     @FindBy(xpath = "//div[@class='table-header-div']/div")
     public List<WebElement> lbl_tableHeaders;
 
-   public void selectDropdownValue(String Value){
+    public void selectDropdownValue(String Value) throws InterruptedException {
+        wait(1);
+
+        drp_Action_Department.click();
+
+        driver.findElement(By.xpath("//div[contains(text(),'"+Value+"')]")).click();
 
 
-
-   }
+    }
 
 
 

@@ -1,0 +1,64 @@
+package TestCases.Smoke;
+
+
+import PageObjects.UBA_CampaignScreen_PageObjects;
+import PageObjects.UBA_DashBoardScreen_PageObjects;
+import PageObjects.UBA_DepartmentsScreen_PageObjects;
+import PageObjects.UBA_LoginScreen_PageObjects;
+import Utils.Globals;
+import org.testng.annotations.Test;
+
+
+//Verify login basic checks and dashboard screen
+public class VerifyDepartmentScreenTest extends Globals {
+
+    //Verify smoke steps for Login screen
+    @Test
+    public void smokeTest_Verify_Department_Screen() throws Exception {
+        UBA_LoginScreen_PageObjects login = new UBA_LoginScreen_PageObjects(driver);
+        UBA_DepartmentsScreen_PageObjects dept = new UBA_DepartmentsScreen_PageObjects(driver);
+        UBA_DashBoardScreen_PageObjects dashBoard = new UBA_DashBoardScreen_PageObjects(driver);
+
+        //log(encrypt("Test@123"));
+        // Login with valid credentials
+        String env = login.login_Env();
+
+        //verify user logged in and dashboard page is loaded without errors
+        verifyElementExistence(login.hdr_Dashboard, "isDisplayed", "DashBoard");
+
+        //get the user role
+        String UserRole = login.txt_LoginRole.getText();
+
+        if (UserRole.equals("Global Admin")) {
+
+            //Click on Department to navigate and verify Department screen is loaded
+            clickWait(dashBoard.menu_Departments);
+            verifyElementExistence(dept.hdr_Departments, "isDisplayed", "Department header");
+
+            //Verify Search Department
+            verifyElementExistence(dept.inp_SearchDept, "isDisplayed", "Search Department");
+
+            //Verify Create new department
+            verifyElementExistence(dept.btn_CreateNewDept, "isDisplayed", "Create Department");
+            clickWait(dept.btn_CreateNewDept);
+            wait(1);
+            clickWait(dept.lnk_backtoDept);
+
+            // verify data table labels are displayed
+            verifyElementExistence(dept.lbl_tableHeaders.get(0), "isDisplayed", "Department Name");
+            verifyElementExistence(dept.lbl_tableHeaders.get(1), "isDisplayed", "Contact Name");
+            verifyElementExistence(dept.lbl_tableHeaders.get(2), "isDisplayed", "Contact Email");
+
+        } else {
+            log(UserRole + " is not have the access to the screen "+ dept.hdr_Departments.getText());
+
+            reportLog(UserRole + " is not have the access to the screen "+ dept.hdr_Departments.getText());
+        }
+
+       // Logout from application
+        login.application_Logout();
+
+
+    }
+
+}
