@@ -11,9 +11,9 @@ import java.io.IOException;
 
 public class TestListeners extends Globals implements ITestListener
 {
-    ExtentTest test;
+   // ExtentTest test;
     ExtentReports extent= ExtentReportNG.getReportObject();
-    ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
+   // ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
 
     public TestListeners() throws IOException {
     }
@@ -21,26 +21,33 @@ public class TestListeners extends Globals implements ITestListener
     //before all test execution initialise the extent test
     public void onTestStart(ITestResult result) {
 
-      test = extent.createTest(result.getMethod().getMethodName());
-        extentTest.set(test);
+        extentLog = extent.createTest(result.getMethod().getMethodName());
+        //extentTest.set(test);
 
     }
 
     public void  onTestSkipped(ITestResult result) {
 
-        extentTest.get().skip(result.getThrowable());
-        extentTest.get().log(Status.SKIP, "Test Skipped");
+        extentLog.fail(result.getThrowable());
+        extentLog.log(Status.SKIP, "Test Skipped");
+    }
+
+    @Override
+    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+        ITestListener.super.onTestFailedButWithinSuccessPercentage(result);
+        extentLog.info("Test failed but it is in defined success ratio " + result.getMethod().getMethodName());
+
     }
 
     public void onTestSuccess(ITestResult result) {
 
-        extentTest.get().log(Status.PASS, "Test Passed");
+        extentLog.log(Status.PASS, "Test Passed");
     }
 
     public void onTestFailure(ITestResult result) {
 
         //Screenshot
-        extentTest.get().fail(result.getThrowable());
+        extentLog.fail(result.getThrowable());
         String testMethodName = result.getMethod().getMethodName();
 
         try {
@@ -50,7 +57,7 @@ public class TestListeners extends Globals implements ITestListener
         }
         try {
            // extentTest.get().addScreenCaptureFromPath("."+getScreenShot(testMethodName, driver), result.getMethod().getMethodName());
-            extentTest.get().addScreenCaptureFromPath(getScreenShot(testMethodName, driver));
+            extentLog.addScreenCaptureFromPath(getScreenShot(testMethodName, driver));
 
         } catch (IOException e) {
 
@@ -64,6 +71,8 @@ public class TestListeners extends Globals implements ITestListener
         extent.flush();
 
     }
+
+
 
 
 }

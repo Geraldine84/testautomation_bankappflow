@@ -3,6 +3,7 @@ package Utils;
  * @author snaik
  */
 
+import com.aventstack.extentreports.ExtentTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
@@ -15,9 +16,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.Browser;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -31,7 +29,6 @@ import javax.crypto.spec.SecretKeySpec;
 import java.awt.*;
 import java.io.*;
 import java.lang.reflect.Method;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.time.Duration;
@@ -50,9 +47,11 @@ public class Globals {
     //global variables declaration
     public static WebDriver driver = null;
     public static Properties prop;
+    public static ExtentTest extentLog;
     public static boolean result;
     //declare user directory path
     public static String directoryPath = System.getProperty("user.dir");
+   // String Extentfilename = directoryPath + File.separator + "Reports" + File.separator + "ExtentReport" + File.separator + getConfigData("ExtentReportName") + ".html";
 
     static File destTxtLog = new File(directoryPath + File.separator + "Reports" + File.separator + "LogReport" + File.separator + "LogTextFile.txt");
     static File ScreenShotFilePath = new File(directoryPath + File.separator + "Reports/ScreenShots/");
@@ -70,6 +69,14 @@ public class Globals {
             System.err.println("IOException: " + ioe.getMessage());
         }
 
+    }
+
+    public static void reportLog(String msg) {
+        try {
+            extentLog.info(msg);
+        } catch (Exception e) {
+        e.getMessage();
+        }
     }
 
     //global method for synchronisation - wait statements
@@ -138,11 +145,11 @@ public class Globals {
     }
 
     //global method to initialise the browser
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     public static WebDriver setBrowser() throws IOException {
         //delete the log file exist
         FileUtils.forceDelete(destTxtLog);
-
+    //extentLog= ExtentReportNG.extent.createTest("test");
         //Delete old screenshots from folder
         FileUtils.cleanDirectory(ScreenShotFilePath);
         log("Older Screenshots deleted ");
@@ -151,7 +158,7 @@ public class Globals {
         FileInputStream fis = new FileInputStream(directoryPath + File.separator + "config.properties");
 
         prop.load(fis);
-        String browserName = System.getProperty("Browser","chrome");//prop.getProperty("BrowserName");
+        String browserName = prop.getProperty("BrowserName");//System.getProperty("Browser","chrome");//prop.getProperty("BrowserName");
         log("Selected Browser is -- " + browserName);
 
         if (browserName.equalsIgnoreCase("chrome")) {
@@ -160,6 +167,7 @@ public class Globals {
             WebDriverManager.chromedriver().setup();
             HashMap<String, Object> chromePrefs = new HashMap<>();
             ChromeOptions options = new ChromeOptions();
+            options.addArguments("--remote-allow-origins=*");
             //disable cookies
             chromePrefs.put("profile.default_content_settings.cookies", 2);
 
@@ -203,7 +211,7 @@ public class Globals {
     }
 
     //global teardown method to Close/quit the browser
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public static void closeBrowser() {
         try {
             driver.quit();
@@ -246,11 +254,11 @@ public class Globals {
     }
 
     //get the method or test name before and after execution
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void getTestNameBeforeExecution(Method method){
         log("--------------------- "+method.getName() +"  --> Test Execution Started ----------------");
     }
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void getTestNameAfterExecution(Method method){
         log("---------------------  "+method.getName() +"  --> Test Execution Completed  ----------------\n");
     }
@@ -372,6 +380,27 @@ public class Globals {
         }
         return true;
     }
+
+    //Verify actual and expected results
+
+    public void verifyResult(String Actual_Value, String Expected_Value) throws Exception {
+        wait(2);
+        try {
+            if(Actual_Value.contains(Expected_Value) || (Actual_Value.equalsIgnoreCase(Expected_Value))) {
+                wait(1);
+                log("ActualResult is: "+Actual_Value+" and Expected Result is: "+Expected_Value+" as expected --- PASSED");
+                assertTrue(true);
+            }else {
+                log("ActualResult is: "+Actual_Value+" and Expected Result is: "+Expected_Value+" Results are not as expected --- FAILED");
+                fail();
+            }
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
+    }
+
 
 }
 

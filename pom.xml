@@ -4,6 +4,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <!--<parent>
+    <groupId>com.terragon</groupId>
+    <artifactId>Global_Project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>-->
+
   <groupId>org.Terragon</groupId>
   <artifactId>TestAutomation_UBA</artifactId>
   <version>1.0-SNAPSHOT</version>
@@ -19,6 +25,11 @@
   </properties>
 
   <dependencies>
+    <!--<dependency>
+      <groupId>com.terragon</groupId>
+      <artifactId>Globals</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>-->
 
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -70,8 +81,52 @@
       <artifactId>guava</artifactId>
       <version>31.1-jre</version>
     </dependency>
-
   </dependencies>
+
+  <!-- Smoke suite Profile -->
+  <profiles>
+    <profile>
+      <id>Smoke</id>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <version>3.0.0-M7</version>
+              <configuration>
+                <suiteXmlFiles>
+                  <suiteXmlFile>testng_Smoke.xml</suiteXmlFile>
+                </suiteXmlFiles>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+
+    <!-- Regression suite  Profile-->
+    <profile>
+      <id>Regression</id>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <version>3.0.0-M7</version>
+              <configuration>
+                <suiteXmlFiles>
+                  <suiteXmlFile>testng_Regression.xml</suiteXmlFile>
+                </suiteXmlFiles>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+  </profiles>
+
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (maybe moved to parent pom) -->
@@ -91,16 +146,6 @@
           <version>3.8.0</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.0.0-M7</version>
-          <configuration>
-            <suiteXmlFiles>
-              <suiteXmlFile>testng.xml</suiteXmlFile>
-            </suiteXmlFiles>
-          </configuration>
-        </plugin>
-        <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
         </plugin>
@@ -108,6 +153,16 @@
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>
         </plugin>
+       <!-- <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.0.0-M7</version>
+          <configuration>
+            <suiteXmlFiles>
+              <suiteXmlFile>testng_Smoke.xml</suiteXmlFile>
+            </suiteXmlFiles>
+          </configuration>
+        </plugin>-->
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
