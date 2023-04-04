@@ -7,6 +7,7 @@ import PageObjects.UBA_DepartmentsScreen_PageObjects;
 import PageObjects.UBA_LoginScreen_PageObjects;
 import Utils.Globals;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
@@ -34,14 +35,26 @@ public class VerifyAuditLogsScreenTest extends Globals {
 
             //Click on Department to navigate and verify Department screen is loaded
             clickWait(dashBoard.menu_AuditLogs);
+            wait(2);
             verifyElementExistence(auditlogs.hdr_AuditLogs, "isDisplayed", "Audit Logs header");
+
+            wait(1);
+            String event = auditlogs.lbl_tableRows.get(0).getText();
+            if (event.isEmpty()){
+
+                String Filepath = getScreenShot("AuditLogs_Screen",driver);
+                extentLog.addScreenCaptureFromPath(getScreenShot("AuditLogs_Screen", driver));
+                log("No Records are displayed on the screen, please refer screenshot: "+Filepath);
+                reportLog("No Records are displayed on the screen, please refer screenshot: "+Filepath);
+                Assert.fail("no data loaded");
+            }
 
             //Verify Calender for date range
             verifyElementExistence(dashBoard.Date_calender, "isDisplayed", "Message Calender");
 
             //select actions from the action dropdown to filter the values
-            auditlogs.selectDropdownValue("Edited User");
-
+            auditlogs.selectDropdownValue("User logged in");
+          wait(2);
             // verify data table labels are displayed
             verifyElementExistence(auditlogs.lbl_tableHeaders.get(0), "isDisplayed", "Event");
             verifyElementExistence(auditlogs.lbl_tableHeaders.get(1), "isDisplayed", "User");

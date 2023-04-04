@@ -95,7 +95,7 @@ public class Globals {
         try {
             WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
             wait.until(ExpectedConditions.visibilityOf(element));
-            wait.until(ExpectedConditions.elementToBeClickable(element));
+           // wait.until(ExpectedConditions.elementToBeClickable(element));
 
             log("Element found.");
         } catch (Exception e) {
@@ -180,7 +180,7 @@ public class Globals {
             options.addArguments("disable-infobars");
             options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
 
-           // options.addArguments("--headless","--window-size=1920,1200");
+            options.addArguments("--headless","--window-size=2560,1600");
             driver = new ChromeDriver(options);
 
         } else if (browserName.equalsIgnoreCase("Firefox")) {
