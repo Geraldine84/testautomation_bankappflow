@@ -6,6 +6,7 @@ import PageObjects.UBA_LoginScreen_PageObjects;
 import PageObjects.UBA_RatesScreen_PageObjects;
 import PageObjects.UBA_ReportsScreen_PageObjects;
 import Utils.Globals;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
@@ -34,6 +35,18 @@ public class VerifyReportsScreenTest extends Globals {
             //Click on Messages to navigate and verify Messages screen is loaded
             clickWait(dashBoard.menu_Reports);
             verifyElementExistence(report.hdr_Reports, "isDisplayed", "Reports header");
+
+            wait(1);
+            String totalSms = report.lbl_tableHeaders.get(1).getText();
+            if (totalSms.isEmpty()){
+
+                String Filepath = getScreenShot("Report_Screen",driver);
+                extentLog.addScreenCaptureFromPath(getScreenShot("Report_Screen", driver));
+                log("No Records are displayed on the screen, please refer screenshot: "+Filepath);
+                reportLog("No Records are displayed on the screen, please refer screenshot: "+Filepath);
+                Assert.fail("no data loaded");
+            }
+
 
             //Verify and select the Summary type as Daily or Monthly
             verifyElementExistence(report.lbl_SummaryType, "isDisplayed", "Summary Type");

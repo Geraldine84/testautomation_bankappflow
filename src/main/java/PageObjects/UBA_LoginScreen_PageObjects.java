@@ -73,7 +73,7 @@ public class UBA_LoginScreen_PageObjects extends Globals {
         // If no environment parameter provided then take default as QA
         if ((Environment == null) || (Environment.equals("EnvValueNotPassed"))) {
 
-            testData = ReadExcelFile("." + File.separator + "TestData", "UBA_Portal_Login.xlsx", "UBA_Login", 1);
+            testData = ReadExcelFile("." + File.separator + "TestData", "UBA_Portal_Login.xlsx", "UBA_Login", 4);
             application_login(testData.get("Login_URL"), testData.get("Login_User_ID"), testData.get("Login_Password"));
         } else {
 
@@ -95,14 +95,14 @@ public class UBA_LoginScreen_PageObjects extends Globals {
                 }
                 case "STAGING": {
 
-                    testData = ReadExcelFile("." + File.separator + "TestData", "UBA_Portal_Login.xlsx", "UBA_Login", 4);
+                    testData = ReadExcelFile("." + File.separator + "TestData", "UBA_Portal_Login.xlsx", "UBA_Login", 3);
                     application_login(testData.get("Login_URL"), testData.get("Login_User_ID"), testData.get("Login_Password"));
 
                     break;
                 }
                 case "PRODUCTION": {
 
-                    testData = ReadExcelFile("." + File.separator + "TestData", "UBA_Portal_Login.xlsx", "UBA_Login", 3);
+                    testData = ReadExcelFile("." + File.separator + "TestData", "UBA_Portal_Login.xlsx", "UBA_Login", 4);
                     application_login(testData.get("Login_URL"), testData.get("Login_User_ID"), testData.get("Login_Password"));
 
                     break;
