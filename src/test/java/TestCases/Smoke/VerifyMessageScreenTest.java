@@ -68,6 +68,5 @@ public class VerifyMessageScreenTest extends Globals {
         }
         // Logout from application
         login.application_Logout();
-
     }
 }

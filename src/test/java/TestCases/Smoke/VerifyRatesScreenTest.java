@@ -67,7 +67,6 @@ public class VerifyRatesScreenTest extends Globals {
             verifyResult(rates.td_SmsCostPromotional.get(2).getText(), "₦" + getConfigData("Glo"));
             verifyResult(rates.td_SmsCostPromotional.get(3).getText(), "₦" + getConfigData("Mobile9"));
 
-      //  }
 
         // Logout from application
         login.application_Logout();

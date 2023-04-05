@@ -102,7 +102,6 @@ public class VerifyLoginWithDashboardScreenTest extends Globals {
        // Logout from application
         login.application_Logout();
 
-
     }
 
 }
