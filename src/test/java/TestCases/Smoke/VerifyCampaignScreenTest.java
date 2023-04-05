@@ -104,7 +104,6 @@ public class VerifyCampaignScreenTest extends Globals {
        // Logout from application
         login.application_Logout();
 
-
     }
 
 }

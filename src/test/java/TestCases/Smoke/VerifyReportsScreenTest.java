@@ -65,7 +65,6 @@ public class VerifyReportsScreenTest extends Globals {
 
             reportLog(UserRole + " is not have the access to the screen "+ report.hdr_Reports.getText());
         }
-
         // Logout from application
         login.application_Logout();
     }

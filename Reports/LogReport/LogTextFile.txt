@@ -4,15 +4,15 @@ chrome Browser Launched successfully!
 --------------------- smokeTest_Verify_Department_Screen  --> Test Execution Started ----------------
 Jenkins Environment : null
 Waiting for 2 seconds...
- ****************    Total time took to load the Login Page : 5 Seconds   *******************
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
+ ****************    Total time took to load the Login Page : 6 Seconds   *******************
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
 Element found.
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
 Element found.
 Waiting for 1 seconds...
 Waiting for 2 seconds...
 No Welcome Window was present
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
 Element found.
 ======  User  anshul jain Logged in successfully    ======
 Waiting for 2 seconds...
@@ -27,14 +27,14 @@ Waiting for 1 seconds...
 Jenkins Environment : null
 Waiting for 2 seconds...
  ****************    Total time took to load the Login Page : 2 Seconds   *******************
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
 Element found.
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
 Element found.
 Waiting for 1 seconds...
 Waiting for 2 seconds...
 No Welcome Window was present
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
 Element found.
 ======  User  anshul jain Logged in successfully    ======
 Waiting for 2 seconds...
@@ -61,14 +61,14 @@ Successfully!! Logged out From application
 Jenkins Environment : null
 Waiting for 2 seconds...
  ****************    Total time took to load the Login Page : 3 Seconds   *******************
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
 Element found.
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
 Element found.
 Waiting for 1 seconds...
 Waiting for 2 seconds...
 No Welcome Window was present
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
 Element found.
 ======  User  anshul jain Logged in successfully    ======
 Waiting for 2 seconds...
@@ -105,14 +105,14 @@ Successfully!! Logged out From application
 Jenkins Environment : null
 Waiting for 2 seconds...
  ****************    Total time took to load the Login Page : 3 Seconds   *******************
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
 Element found.
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
 Element found.
 Waiting for 1 seconds...
 Waiting for 2 seconds...
 No Welcome Window was present
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
 Element found.
 ======  User  anshul jain Logged in successfully    ======
 Waiting for 2 seconds...
@@ -128,14 +128,14 @@ Waiting for 1 seconds...
 Jenkins Environment : null
 Waiting for 2 seconds...
  ****************    Total time took to load the Login Page : 2 Seconds   *******************
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
 Element found.
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
 Element found.
 Waiting for 1 seconds...
 Waiting for 2 seconds...
 No Welcome Window was present
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
 Element found.
 ======  User  anshul jain Logged in successfully    ======
 Waiting for 2 seconds...
@@ -165,14 +165,14 @@ Successfully!! Logged out From application
 Jenkins Environment : null
 Waiting for 2 seconds...
  ****************    Total time took to load the Login Page : 3 Seconds   *******************
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
 Element found.
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
 Element found.
 Waiting for 1 seconds...
 Waiting for 2 seconds...
 No Welcome Window was present
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
 Element found.
 ======  User  anshul jain Logged in successfully    ======
 Waiting for 2 seconds...
@@ -202,14 +202,14 @@ Successfully!! Logged out From application
 Jenkins Environment : null
 Waiting for 2 seconds...
  ****************    Total time took to load the Login Page : 3 Seconds   *******************
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
 Element found.
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
 Element found.
 Waiting for 1 seconds...
 Waiting for 2 seconds...
 No Welcome Window was present
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
 Element found.
 ======  User  anshul jain Logged in successfully    ======
 Waiting for 2 seconds...
@@ -224,14 +224,14 @@ Login button 'isEnabled' properly. Passed.
 Jenkins Environment : null
 Waiting for 2 seconds...
  ****************    Total time took to load the Login Page : 2 Seconds   *******************
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Email address')]] for up to PT20S seconds.
 Element found.
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //label[contains(text(),'Password')]] for up to PT20S seconds.
 Element found.
 Waiting for 1 seconds...
 Waiting for 2 seconds...
 No Welcome Window was present
-Waiting for [[ChromeDriver: chrome on MAC (c8092a8fa7d072ede4add09810459ed7)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
+Waiting for [[ChromeDriver: chrome on MAC (8874789fdb71f1c76fbca64e26fe7b1e)] -> xpath: //div[@class='header-block']/div[text()='Dashboard']] for up to PT20S seconds.
 Element found.
 ======  User  anshul jain Logged in successfully    ======
 Waiting for 2 seconds...
@@ -239,8 +239,8 @@ DashBoard 'isDisplayed' properly. Passed.
 Logged in User : anshul jain, with User Role: Global Admin
 Waiting for 2 seconds...
 Detailed insights 'isDisplayed' properly. Passed.
-TotalSMS_Count= 712,057, and Total_Consumption=₦1,675,170.59
-i, For the TotalSMS_Unites=712,057
+TotalSMS_Count= 569,863, and Total_Consumption=₦1,340,712.21
+i, For the TotalSMS_Unites=569,863
 Waiting for 2 seconds...
 Departments menu 'isDisplayed' properly. Passed.
 Waiting for 2 seconds...

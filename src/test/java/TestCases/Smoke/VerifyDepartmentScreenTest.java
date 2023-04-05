@@ -70,7 +70,6 @@ public class VerifyDepartmentScreenTest extends Globals {
        // Logout from application
         login.application_Logout();
 
-
     }
 
 }
