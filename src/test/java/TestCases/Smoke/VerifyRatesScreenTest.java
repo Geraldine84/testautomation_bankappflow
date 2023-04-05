@@ -5,6 +5,7 @@ import PageObjects.UBA_DashBoardScreen_PageObjects;
 import PageObjects.UBA_LoginScreen_PageObjects;
 import PageObjects.UBA_RatesScreen_PageObjects;
 import Utils.Globals;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
@@ -33,6 +34,17 @@ public class VerifyRatesScreenTest extends Globals {
             //Click on Messages to navigate and verify Messages screen is loaded
             clickWait(dashBoard.menu_Rates);
             verifyElementExistence(rates.hdr_Rates, "isDisplayed", "Rates header");
+            wait(1);
+
+            String smscost = rates.td_SmsCostPromotional.get(0).getText();
+            if (smscost.isEmpty()){
+
+                String Filepath = getScreenShot("Rates_Screen",driver);
+                extentLog.addScreenCaptureFromPath(getScreenShot("Rates_Screen", driver));
+                log("No Records are displayed on the screen, please refer screenshot: "+Filepath);
+                reportLog("No Records are displayed on the screen, please refer screenshot: "+Filepath);
+                Assert.fail("no data loaded");
+            }
 
             // verify data table labels are displayed
             verifyElementExistence(rates.lbl_NetwrokProvider, "isDisplayed", "Network Provider");

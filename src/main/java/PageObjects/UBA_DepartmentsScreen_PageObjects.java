@@ -30,6 +30,9 @@ public class UBA_DepartmentsScreen_PageObjects extends Globals {
     @FindBy(xpath = "//div[@class='table-header-div']/div")
     public List<WebElement> lbl_tableHeaders;
 
+    @FindBy(xpath = "//div[@class='table-content-div ng-star-inserted']//div")
+    public List<WebElement> lbl_tableRows;
+
    
 
 

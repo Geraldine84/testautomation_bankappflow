@@ -6,6 +6,7 @@ import PageObjects.UBA_DashBoardScreen_PageObjects;
 import PageObjects.UBA_DepartmentsScreen_PageObjects;
 import PageObjects.UBA_LoginScreen_PageObjects;
 import Utils.Globals;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
@@ -34,6 +35,17 @@ public class VerifyDepartmentScreenTest extends Globals {
             //Click on Department to navigate and verify Department screen is loaded
             clickWait(dashBoard.menu_Departments);
             verifyElementExistence(dept.hdr_Departments, "isDisplayed", "Department header");
+            wait(1);
+
+            String deptName = dept.lbl_tableRows.get(0).getText();
+            if (deptName.isEmpty()){
+
+                String Filepath = getScreenShot("Department_Screen",driver);
+                extentLog.addScreenCaptureFromPath(getScreenShot("Department_Screen", driver));
+                log("No Records are displayed on the screen, please refer screenshot: "+Filepath);
+                reportLog("No Records are displayed on the screen, please refer screenshot: "+Filepath);
+                Assert.fail("no data loaded");
+            }
 
             //Verify Search Department
             verifyElementExistence(dept.inp_SearchDept, "isDisplayed", "Search Department");

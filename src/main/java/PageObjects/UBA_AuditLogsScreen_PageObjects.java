@@ -25,6 +25,9 @@ public class UBA_AuditLogsScreen_PageObjects extends Globals {
     @FindBy(xpath = "//div[@class='table-header-div']/div")
     public List<WebElement> lbl_tableHeaders;
 
+    @FindBy(xpath = "//div[@class='first-ob-dv1']")
+    public List<WebElement> lbl_tableRows;
+
     public void selectDropdownValue(String Value) throws InterruptedException {
         wait(1);
 

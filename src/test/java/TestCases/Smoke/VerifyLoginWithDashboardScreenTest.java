@@ -5,6 +5,7 @@ import PageObjects.UBA_DashBoardScreen_PageObjects;
 import PageObjects.UBA_LoginScreen_PageObjects;
 import Utils.Globals;
 import com.aventstack.extentreports.Status;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
@@ -53,51 +54,49 @@ public class VerifyLoginWithDashboardScreenTest extends Globals {
         log("Logged in User : "+User+", with User Role: "+UserRole);
         reportLog("Logged in User : "+User+", with User Role: "+UserRole);
 
-
-        //verify the screen based on the logged in role
-        if(UserRole.equalsIgnoreCase("Department User"))
-        {
-            //Department User = menu_Campaigns,menu_Messages,menu_Settings
-            verifyElementExistence(dashBoard.menu_Campaigns, "isDisplayed", "Campaign menu");
-            verifyElementExistence(dashBoard.menu_Messages, "isDisplayed", "Messages menu");
-            verifyElementExistence(dashBoard.menu_Settings, "isDisplayed", "Settings menu");
-
-        } else if(UserRole.equalsIgnoreCase("Department Admin"))
-        {
-            //Department User = menu_Campaigns,menu_Messages,menu_Settings,menu_Rates
-            verifyElementExistence(dashBoard.menu_Rates, "isDisplayed", "Rates menu");
-
-         }else if( UserRole.equalsIgnoreCase("System Admin"))
-        {
-            //Department User = menu_Campaigns,menu_Messages,menu_Settings,menu_Rates,menu_Reports
-        verifyElementExistence(dashBoard.menu_Reports, "isDisplayed", "Reports menu");
-
-         }else if( UserRole.equalsIgnoreCase("Global Admin"))
-        {
-            //Department User = menu_Campaigns,menu_Messages,menu_Settings,menu_Rates,menu_Reports,menu_Departments,menu_AuditLogs
-            verifyElementExistence(dashBoard.menu_Departments, "isDisplayed", "Departments menu");
-            verifyElementExistence(dashBoard.menu_AuditLogs, "isDisplayed", "AuditLogs menu");
-
-        }else {
-            reportLog("Logged in role "+UserRole +" is not a part of UBA role");
-        }
-
         //verify insights labels and details are displayed
         verifyElementExistence(dashBoard.lbl_Detailedinsights, "isDisplayed", "Detailed insights");
         String TotalSMS_Unites = dashBoard.txt_sms.get(0).getText();
         if (TotalSMS_Unites.isEmpty()){
 
-           String Filepath = getScreenShot("InsightDetails_Screen",driver);
+            String Filepath = getScreenShot("InsightDetails_Screen",driver);
             extentLog.addScreenCaptureFromPath(getScreenShot("InsightDetails_Screen", driver));
             log("No Records are displayed on the screen, please refer screenshot: "+Filepath);
             reportLog("No Records are displayed on the screen, please refer screenshot: "+Filepath);
+            Assert.fail("no data loaded");
         }else {
             String TotalSMS_Count = dashBoard.txt_sms.get(1).getText();
             String Total_Consumption = dashBoard.txt_sms.get(2).getText();
-            log("TotalSMS_Count= "+TotalSMS_Count+", and Total_Consumption="+Total_Consumption+", " +
-                    "For the TotalSMS_Unites="+TotalSMS_Unites);
-            reportLog("TotalSMS_Count= "+TotalSMS_Count+", and Total_Consumption="+Total_Consumption+", " +
-                    "For the TotalSMS_Unites="+TotalSMS_Unites);
+            log("TotalSMS_Count= " + TotalSMS_Count + ", and Total_Consumption=" + Total_Consumption + ", " +
+                    "For the TotalSMS_Unites=" + TotalSMS_Unites);
+            reportLog("TotalSMS_Count= " + TotalSMS_Count + ", and Total_Consumption=" + Total_Consumption + ", " +
+                    "For the TotalSMS_Unites=" + TotalSMS_Unites);
+
+
+            //verify the screen based on the logged in role
+            if (UserRole.equalsIgnoreCase("Department User")) {
+                //Department User = menu_Campaigns,menu_Messages,menu_Settings
+                verifyElementExistence(dashBoard.menu_Campaigns, "isDisplayed", "Campaign menu");
+                verifyElementExistence(dashBoard.menu_Messages, "isDisplayed", "Messages menu");
+                verifyElementExistence(dashBoard.menu_Settings, "isDisplayed", "Settings menu");
+
+            } else if (UserRole.equalsIgnoreCase("Department Admin")) {
+                //Department User = menu_Campaigns,menu_Messages,menu_Settings,menu_Rates
+                verifyElementExistence(dashBoard.menu_Rates, "isDisplayed", "Rates menu");
+
+            } else if (UserRole.equalsIgnoreCase("System Admin")) {
+                //Department User = menu_Campaigns,menu_Messages,menu_Settings,menu_Rates,menu_Reports
+                verifyElementExistence(dashBoard.menu_Reports, "isDisplayed", "Reports menu");
+
+            } else if (UserRole.equalsIgnoreCase("Global Admin")) {
+                //Department User = menu_Campaigns,menu_Messages,menu_Settings,menu_Rates,menu_Reports,menu_Departments,menu_AuditLogs
+                verifyElementExistence(dashBoard.menu_Departments, "isDisplayed", "Departments menu");
+                verifyElementExistence(dashBoard.menu_AuditLogs, "isDisplayed", "AuditLogs menu");
+
+            } else {
+                reportLog("Logged in role " + UserRole + " is not a part of UBA role");
+            }
+
         }
 
        // Logout from application
