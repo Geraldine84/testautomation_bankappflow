@@ -9,8 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class UBA_AuditLogsScreen_PageObjects extends Globals {
-    public UBA_AuditLogsScreen_PageObjects(WebDriver driver)
+public class Access_AuditLogsScreen_PageObjects extends Globals {
+    public Access_AuditLogsScreen_PageObjects(WebDriver driver)
     {
         PageFactory.initElements(driver, this);
     }

@@ -1,9 +1,9 @@
 package TestCases.Smoke;
 
 
-import PageObjects.UBA_CampaignScreen_PageObjects;
-import PageObjects.UBA_DashBoardScreen_PageObjects;
-import PageObjects.UBA_LoginScreen_PageObjects;
+import PageObjects.Access_CampaignScreen_PageObjects;
+import PageObjects.Access_DashBoardScreen_PageObjects;
+import PageObjects.Access_LoginScreen_PageObjects;
 import Utils.Globals;
 import com.google.common.base.Verify;
 import org.openqa.selenium.Keys;
@@ -19,9 +19,9 @@ public class VerifyCampaignScreenTest extends Globals {
     //Verify smoke steps for Login screen
     @Test
     public void smokeTest_Verify_CampaignScreen() throws Exception {
-        UBA_LoginScreen_PageObjects login = new UBA_LoginScreen_PageObjects(driver);
-        UBA_CampaignScreen_PageObjects camp = new UBA_CampaignScreen_PageObjects(driver);
-        UBA_DashBoardScreen_PageObjects dashBoard = new UBA_DashBoardScreen_PageObjects(driver);
+        Access_LoginScreen_PageObjects login = new Access_LoginScreen_PageObjects(driver);
+        Access_CampaignScreen_PageObjects camp = new Access_CampaignScreen_PageObjects(driver);
+        Access_DashBoardScreen_PageObjects dashBoard = new Access_DashBoardScreen_PageObjects(driver);
 
         //log(encrypt("Test@123"));
         // Login with valid credentials

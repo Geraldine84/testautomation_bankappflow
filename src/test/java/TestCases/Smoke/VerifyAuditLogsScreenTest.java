@@ -1,10 +1,10 @@
 package TestCases.Smoke;
 
 
-import PageObjects.UBA_AuditLogsScreen_PageObjects;
-import PageObjects.UBA_DashBoardScreen_PageObjects;
-import PageObjects.UBA_DepartmentsScreen_PageObjects;
-import PageObjects.UBA_LoginScreen_PageObjects;
+import PageObjects.Access_AuditLogsScreen_PageObjects;
+import PageObjects.Access_DashBoardScreen_PageObjects;
+import PageObjects.Access_DepartmentsScreen_PageObjects;
+import PageObjects.Access_LoginScreen_PageObjects;
 import Utils.Globals;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -17,9 +17,9 @@ public class VerifyAuditLogsScreenTest extends Globals {
     //Verify smoke steps for Login screen
     @Test
     public void smokeTest_Verify_AuditLogs_Screen() throws Exception {
-        UBA_LoginScreen_PageObjects login = new UBA_LoginScreen_PageObjects(driver);
-        UBA_AuditLogsScreen_PageObjects auditlogs = new UBA_AuditLogsScreen_PageObjects(driver);
-        UBA_DashBoardScreen_PageObjects dashBoard = new UBA_DashBoardScreen_PageObjects(driver);
+        Access_LoginScreen_PageObjects login = new Access_LoginScreen_PageObjects(driver);
+        Access_AuditLogsScreen_PageObjects auditlogs = new Access_AuditLogsScreen_PageObjects(driver);
+        Access_DashBoardScreen_PageObjects dashBoard = new Access_DashBoardScreen_PageObjects(driver);
 
         //log(encrypt("Test@123"));
         // Login with valid credentials

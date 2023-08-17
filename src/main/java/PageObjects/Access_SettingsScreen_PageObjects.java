@@ -8,8 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class UBA_SettingsScreen_PageObjects extends Globals {
-    public UBA_SettingsScreen_PageObjects(WebDriver driver)
+public class Access_SettingsScreen_PageObjects extends Globals {
+    public Access_SettingsScreen_PageObjects(WebDriver driver)
     {
         PageFactory.initElements(driver, this);
     }

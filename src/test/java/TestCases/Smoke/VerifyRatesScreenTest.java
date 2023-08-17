@@ -1,9 +1,9 @@
 package TestCases.Smoke;
 
 
-import PageObjects.UBA_DashBoardScreen_PageObjects;
-import PageObjects.UBA_LoginScreen_PageObjects;
-import PageObjects.UBA_RatesScreen_PageObjects;
+import PageObjects.Access_DashBoardScreen_PageObjects;
+import PageObjects.Access_LoginScreen_PageObjects;
+import PageObjects.Access_RatesScreen_PageObjects;
 import Utils.Globals;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,9 +15,9 @@ public class VerifyRatesScreenTest extends Globals {
     //Verify smoke steps for Login screen
     @Test
     public void smokeTest_Verify_RatesScreen() throws Exception {
-        UBA_LoginScreen_PageObjects login = new UBA_LoginScreen_PageObjects(driver);
-        UBA_RatesScreen_PageObjects rates = new UBA_RatesScreen_PageObjects(driver);
-        UBA_DashBoardScreen_PageObjects dashBoard = new UBA_DashBoardScreen_PageObjects(driver);
+        Access_LoginScreen_PageObjects login = new Access_LoginScreen_PageObjects(driver);
+        Access_RatesScreen_PageObjects rates = new Access_RatesScreen_PageObjects(driver);
+        Access_DashBoardScreen_PageObjects dashBoard = new Access_DashBoardScreen_PageObjects(driver);
 
         //log(encrypt("Test@123"));
         // Login with valid credentials

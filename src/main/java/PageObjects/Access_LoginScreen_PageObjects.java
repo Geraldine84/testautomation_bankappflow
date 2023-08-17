@@ -11,9 +11,9 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-public class UBA_LoginScreen_PageObjects extends Globals {
+public class Access_LoginScreen_PageObjects extends Globals {
 
-    public UBA_LoginScreen_PageObjects(WebDriver driver) {
+    public Access_LoginScreen_PageObjects(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 

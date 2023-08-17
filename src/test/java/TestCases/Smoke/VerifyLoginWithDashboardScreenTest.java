@@ -1,8 +1,8 @@
 package TestCases.Smoke;
 
 
-import PageObjects.UBA_DashBoardScreen_PageObjects;
-import PageObjects.UBA_LoginScreen_PageObjects;
+import PageObjects.Access_DashBoardScreen_PageObjects;
+import PageObjects.Access_LoginScreen_PageObjects;
 import Utils.Globals;
 import com.aventstack.extentreports.Status;
 import org.testng.Assert;
@@ -15,7 +15,7 @@ public class VerifyLoginWithDashboardScreenTest extends Globals {
     //Verify smoke steps for Login screen
     @Test(priority = 1)
     public void smokeTest_Verify_LoginScreen() throws Exception {
-        UBA_LoginScreen_PageObjects login = new UBA_LoginScreen_PageObjects(driver);
+        Access_LoginScreen_PageObjects login = new Access_LoginScreen_PageObjects(driver);
 
         //log(encrypt("Test@123"));
         // Login with valid credentials
@@ -39,8 +39,8 @@ public class VerifyLoginWithDashboardScreenTest extends Globals {
 
     @Test(priority = 2)
     public void smokeTest_Verify_DashBoardScreen() throws Exception {
-        UBA_LoginScreen_PageObjects login = new UBA_LoginScreen_PageObjects(driver);
-        UBA_DashBoardScreen_PageObjects dashBoard = new UBA_DashBoardScreen_PageObjects(driver);
+        Access_LoginScreen_PageObjects login = new Access_LoginScreen_PageObjects(driver);
+        Access_DashBoardScreen_PageObjects dashBoard = new Access_DashBoardScreen_PageObjects(driver);
 
         // Login with valid credentials
         String env = login.login_Env();

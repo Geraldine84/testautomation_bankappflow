@@ -8,8 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class UBA_RatesScreen_PageObjects extends Globals {
-    public UBA_RatesScreen_PageObjects(WebDriver driver)
+public class Access_RatesScreen_PageObjects extends Globals {
+    public Access_RatesScreen_PageObjects(WebDriver driver)
     {
         PageFactory.initElements(driver, this);
     }

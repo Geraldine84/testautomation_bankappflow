@@ -1,10 +1,10 @@
 package TestCases.Smoke;
 
 
-import PageObjects.UBA_CampaignScreen_PageObjects;
-import PageObjects.UBA_DashBoardScreen_PageObjects;
-import PageObjects.UBA_DepartmentsScreen_PageObjects;
-import PageObjects.UBA_LoginScreen_PageObjects;
+import PageObjects.Access_CampaignScreen_PageObjects;
+import PageObjects.Access_DashBoardScreen_PageObjects;
+import PageObjects.Access_DepartmentsScreen_PageObjects;
+import PageObjects.Access_LoginScreen_PageObjects;
 import Utils.Globals;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,9 +16,9 @@ public class VerifyDepartmentScreenTest extends Globals {
     //Verify smoke steps for Login screen
     @Test
     public void smokeTest_Verify_Department_Screen() throws Exception {
-        UBA_LoginScreen_PageObjects login = new UBA_LoginScreen_PageObjects(driver);
-        UBA_DepartmentsScreen_PageObjects dept = new UBA_DepartmentsScreen_PageObjects(driver);
-        UBA_DashBoardScreen_PageObjects dashBoard = new UBA_DashBoardScreen_PageObjects(driver);
+        Access_LoginScreen_PageObjects login = new Access_LoginScreen_PageObjects(driver);
+        Access_DepartmentsScreen_PageObjects dept = new Access_DepartmentsScreen_PageObjects(driver);
+        Access_DashBoardScreen_PageObjects dashBoard = new Access_DashBoardScreen_PageObjects(driver);
 
         //log(encrypt("Test@123"));
         // Login with valid credentials
